@@ -1,16 +1,15 @@
+    
+
 <html doctype!>
     <body>
     <title> Quantum physics </title>
     <head>
   
       <div class='nav'>
-          <ul list-type:'none'>
-        <li class='active' ><a href="index.html">Home</a></li> 
-        <li><a href="Others.html">Others</a></li>   
-              
-          </ul>
-      </div>
-	    <div id="preloader"></div>
+    
+        <a href="index.html"><span>Home</span></a>
+        <a href="Others.html"><span>Know more</span></a>
+       </div>
   
     </head>
     
@@ -24,15 +23,6 @@
             background-image:url('nebula.jpg');
             background-size:cover;
             }
-	    #preloader{
-	    background: #000 url('loading.gif') no-repeat centre centre;
-		    height:100vh;
-		    width:100%;
-		    position:fixed;
-		    z-index:100;
-		
-		
-	    }
             h1{
             margin:20%;            
                 color:#d4d4e7;
@@ -51,49 +41,128 @@
                 color:#fff;
                 
             }
-            .nav{
-               float:left;
-             
-               width: 100%; height: 10vh; margin: auto; 
-               align-items:center; 
-               display:flex;
-               font-weight: bold;
-               }
-            .nav ul li{
-                border: 2px solid ##ff0a00;
-                color:#fff;
-              display: inline-block; list-style: none; margin: 100px 20px;    
-                   
-            }
-            nav ul li a { text-decoration: none; 
-            color:#ffffff; 
-            padding: 30px 50px;
-             transition: all 0.6s ease 0s; }
-
-nav ul li:hover { background-color: #ffffff; color: #9055ff;}
-
+          
+a{
+    position:relative;
+    display:inline-block;
+    text-decoration:none;
+    color:#03e9f4;
+    font-family:"consoals";
+    padding: 20px 15px;
+    text-transform:uppercase;
+    overflow:hidden;
+    transition:0.5s;
+}
     footer{
         color:#fff;
+    }
+    .nav{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        background:#050801;
     }
 h4{ 
 color:#fff;
 }
+a:hover{
+    background:#03e9f4;
+    color:#050801;
+    box-shadow: 0 0 5px #03e9f4;
+                0 0 25px #03e9f4;
+                0 0 50px #03e9f4;
+                0 0 200px #03e9f4;
+    border-radius:2px;
+}
+a span{
+    position: absolute;
+    display:block;
+    
+}
+a span:nth child(1)
+{
+    top:0;
+    left: -100%;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+    
+}
+@keyframes animate1{
+    0%{
+        left:-100%;
+    }
+    50%,100%{
+        left:100%;
+    }
+    
+}
+a span:nth child(2)
+{
+    top:-100%;
+    left: 0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate2 2s linear infinite;
+    animation-delay:0.25s;
+}
+@keyframes animate2{
+    0%{
+        top:-100%;
+    }
+    50%,100%{
+        top:100%;
+    }
+    
+}
+a span:nth child(3)
+{
+    bottom:0;
+    right: -100%;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay:0.25s;
+    
+}
+@keyframes animate3{
+    0%{
+        right:-100%;
+    }
+    50%,100%{
+        right:100%;
+    }
+    
+}
+
+a span:nth child(3)
+{
+    bottom:-100%;
+    left: 0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay:0.75s;
+    
+}
+@keyframes animate4{
+    0%{
+        bottom:-100%;
+    }
+    50%,100%{
+        bottom:100%;
+    }
+    
+}
+
 
     </style>
-<script>
-const countEl = document.getElementById('count');
-
-updateVisitCount();
-function updateVisitCount() {
-	fetch('https://api.countapi.xyz/update/florin-popcom/codepen/?amount=1')
-	.then(res => res.json())
-	.then(res => {
-		countEl.innerHTML = res.value;
-	})
-}
-</script>
     <footer>Learn<a href="Others.html"> more</a></footer>
-      <h4 id="count">0</h4>
 </body>
 
     
